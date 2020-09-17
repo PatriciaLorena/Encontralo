@@ -80,4 +80,11 @@ class AuthController extends Controller
  {
      return response()->json($request->user());
  }
+
+ public function todos(Request $request)
+ {
+    // return response()->json($request->user::all);
+     return User::all();
+ }
+
 }
