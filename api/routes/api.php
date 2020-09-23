@@ -23,7 +23,7 @@ Route::group([
 ], function () {
     Route::post('login', 'AuthController@login');
     Route::post('signup', 'AuthController@signUp');
-    Route::get('todos', 'AuthController@todos');
+    Route::get('show', 'AuthController@show');
 
     Route::group([
       'middleware' => 'auth:api'
