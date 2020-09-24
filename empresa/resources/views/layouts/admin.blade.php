@@ -120,7 +120,7 @@
                 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                     <div class="container">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
+                            <!--{{ config('app.name', 'Laravel') }}-->
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
@@ -220,7 +220,13 @@
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
-                  <p>Producto<i class="fas fa-angle-left right"></i></p>
+                  <p>Mi empresa<i class="fas fa-angle-left right"></i></p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Articulo<i class="fas fa-angle-left right"></i></p>
               </a>
             </li>
             <li class="nav-item has-treeview">
@@ -304,7 +310,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
+  <footer class="page-footer font-small blue pt-4">
 
     <strong>Encontralo un sistema rapido para la busqueda de Productos</strong>
   </footer>
