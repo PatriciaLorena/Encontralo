@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "admin-lte": "^3.0.4"
+        "admin-lte": "^3.0.4",
+        "bootstrap-icons": "^1.0.0"
     }
 }
