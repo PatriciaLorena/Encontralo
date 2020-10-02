@@ -19,14 +19,15 @@ class MarcaController extends Controller
     public function index(Request $request)
     {
       if ($request) {
-      $query = trim($request->get('search'));
+      $query = trim($request->get('searchText'));
       $marca = Marca::where('nombre', 'LIKE', '%' . $query . '%')
         ->orderBy('idMarca', 'asc')
         ->paginate(5);
 
-      return view('marca.index', ['marca' => $marca, 'search'=> $query]);
+      return view('marca.index', ['marca' => $marca, 'searchText'=> $query]);
     }
     }
+
 
     /**
      * Show the form for creating a new resource.

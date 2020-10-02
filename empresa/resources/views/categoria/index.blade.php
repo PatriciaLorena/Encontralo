@@ -5,13 +5,16 @@
       <a href="" target="_blank" type="button" class="btn btn-primary">Reporte Categoria</a>
       <a href="categoria/create"><button type="button" class="btn btn-success float-right">Agregar Categoria</button></a>
     </h2>
-    <h6>
-      @if($search ?? '')
-        <div class="alert alert-primary" role="alert">
-            Los resultados de tu busqueda '{{ $search ?? '' }}' son:
-        </div>
-      @endif
-    </h6>
+
+    <nav class="navbar navbar-light float-right">
+      <form class="form-inline">
+
+        <input name="searchText" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </nav>
+    
 <table class="table table-hover table-dark">
     <thead>
       <tr>

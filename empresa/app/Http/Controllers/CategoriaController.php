@@ -20,12 +20,12 @@ class CategoriaController extends Controller
      public function index(Request $request)
      {
          if ($request) {
-         $query = trim($request->get('search'));
+         $query = trim($request->get('searchText'));
          $categoria = Categoria::where('nombre', 'LIKE', '%' . $query . '%')
            ->orderBy('idCategoria', 'asc')
            ->paginate(5);
 
-         return view('categoria.index', ['categoria' => $categoria, 'search'=> $query]);
+         return view('categoria.index', ['categoria' => $categoria, 'searchText'=> $query]);
        }
      }
 
