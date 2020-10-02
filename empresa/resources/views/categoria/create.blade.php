@@ -1,5 +1,5 @@
 @extends ('layouts.admin')
-@section ('content')
+@section ('contenido')
 <div class="container">
  @if(count($errors) > 0)
 		<div class="errors">
@@ -11,14 +11,14 @@
 		</div>
 	@endif
 <div class="col-12">
-  <h1>Agregar proveedor</h1>
-    <form method="POST" action="{{route("categorias.store")}}">
+  <h1>Agregar categoria</h1>
+    <form method="POST" action="{{route("categoria.store")}}">
       @csrf
-      <div class="col-sm-6">
+      <div class="col-sm-5">
         <div class="form-group">
           <label class="label">Nombre</label>
             <input id="nombre" type="text" class="form-control @error('alpha') is-invalid @enderror"
-            name="nombreEmpresa" value="{{ old('nombre') }}" required maxlength="255"
+            name="nombre" value="{{ old('nombre') }}" required maxlength="255"
             autocomplete="nombre" placeholder="Ingrese el nombre de la categoria" autofocus>
               @error('alpha')
                 <span class="invalid-feedback" role="alert">
@@ -28,13 +28,13 @@
         </div>
       </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-5">
         <div class="form-group">
           <label class="label">Descripcion</label>
-            <input required  maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}" name="descripcion" class="form-control"
-            type="text" maxlength="200" placeholder="Ingrese su direccion">
+            <input required  maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
+             name="descripcion" class="form-control"
+            type="text" maxlength="200" placeholder="Ingrese su descripcion">
         </div>
-      </div>
       </div>
       <div class="form-group row mb-0">
         <div class="col-md-8 offset-md-4">

@@ -114,7 +114,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li><a href="{{url('categoria')}}" class="{{ Request::path() === 'categoria' ?
+                'nav-link active' : 'nav-link' }}"><i class="fa fa-circle-o"></i> Categorías</a></li>
                 <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Marca</a></li>
               </ul>
             </li>
@@ -130,7 +131,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Articulos</a></li>
-                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Categoria</a></li>
+                <li><a href="categoria"><i class="fa fa-circle-o"></i> Categoria</a></li>
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Marca</a></li>
               </ul>
             </li>
@@ -178,7 +179,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Ventas</h3>
+                  <h3 class="box-title">Sistema de administracion de articulos</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 

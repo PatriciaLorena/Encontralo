@@ -1,9 +1,14 @@
 <?php
 
-use App\Categoria;
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+use Illuminate\Http\Requests;
 use Illuminate\Http\Request;
+
+use App\Categoria;
+use App\Http\Requests\CategoriaFormRequest;
+
+
 
 class CategoriaController extends Controller
 {
@@ -12,10 +17,17 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+     public function index(Request $request)
+     {
+         if ($request) {
+         $query = trim($request->get('search'));
+         $categoria = Categoria::where('nombre', 'LIKE', '%' . $query . '%')
+           ->orderBy('idCategoria', 'asc')
+           ->paginate(5);
+
+         return view('categoria.index', ['categoria' => $categoria, 'search'=> $query]);
+       }
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +36,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('categorias.create');
+        return view('categoria.create');
     }
 
     /**
@@ -33,19 +45,18 @@ class CategoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-      $request->validate([
-         'nombre'=>'required'
-     ]);
 
-     $categorias = new Categoria([
-         'nombre' => $request->get('nombre'),
-         'descripcion' => $request->get('descripcion')
-     ]);
-     $categorias->save();
-     return redirect('/categorias')->with('success', 'Contact saved!');
-    }
+    public function store(Request $request)
+        {
+            $categoria = new Categoria();
+
+            $categoria-> nombre = request( 'nombre');
+            $categoria-> descripcion = request( 'descripcion');
+
+            $categoria->save();
+
+            return redirect( '/categoria')->with('success', 'Contact saved!');
+        }
 
     /**
      * Display the specified resource.
@@ -64,10 +75,10 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+     public function edit($idCategoria)
+         {
+             return view('categoria.edit', ['categoria' => Categoria::findOrFail($idCategoria)]);
+         }
 
     /**
      * Update the specified resource in storage.
@@ -76,19 +87,30 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
+
+        public function update(CategoriaFormRequest  $request, $idCategoria)
+        {
+            $categoria = Categoria::findOrFail($idCategoria);
+
+            $categoria-> nombre = $request->get( 'nombre' );
+            $categoria-> descripcion = $request->get( 'descripcion');
+            $categoria->update();
+
+            return redirect( '/categoria');
+        }
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+     public function destroy($idCategoria)
+     {
+         $categoria = Categoria::findOrFail($idCategoria);
+
+         $categoria->delete();
+
+         return redirect( '/categoria');
+     }
 }
