@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="container">
     <h2>Lista de categorias registradas
-      <a href="" target="_blank" type="button" class="btn btn-primary">Reporte Categoria</a>
+      <a href="{{ route('reportePDF')}}" target="_blank" type="button" class="btn btn-primary">Reporte Categoria</a>
       <a href="categoria/create"><button type="button" class="btn btn-success float-right">Agregar Categoria</button></a>
     </h2>
 
@@ -14,7 +14,7 @@
            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
     </nav>
-    
+
 <table class="table table-hover table-dark">
     <thead>
       <tr>

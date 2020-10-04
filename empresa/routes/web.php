@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('categoria', 'CategoriaController');
 Route::resource('marca', 'MarcaController');
+Route::get('/pdfcategoria', 'PDFController@PDFCategoria')->name('reportePDF');
