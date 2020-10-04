@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="container">
     <h2>Lista de categorias registradas
-      <a href="{{ route('reportePDF')}}" target="_blank" type="button" class="btn btn-primary">Reporte Categoria</a>
+      <a href="{{ route('reportePDFCategoria')}}" target="_blank" type="button" class="btn btn-primary">Reporte Categoria</a>
       <a href="categoria/create"><button type="button" class="btn btn-success float-right">Agregar Categoria</button></a>
     </h2>
 

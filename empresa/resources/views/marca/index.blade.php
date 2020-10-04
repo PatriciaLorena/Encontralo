@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="container">
     <h2>Lista de Marcas registradas
-      <a href="" target="_blank" type="button" class="btn btn-primary">Reporte Marca</a>
+      <a href="{{ route('reportePDFMarca')}}" target="_blank" type="button" class="btn btn-primary">Reporte Marca</a>
       <a href="marca/create"><button type="button" class="btn btn-success float-right">Agregar marca</button></a>
     </h2>
     <h6>
