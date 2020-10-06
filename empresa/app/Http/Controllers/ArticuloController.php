@@ -69,7 +69,6 @@ class ArticuloController extends Controller
       $articulo->nombre=$request->get('nombre');
      	$articulo->codigo=$request->get('codigo');
      	$articulo->descripcion=$request->get('descripcion');
-      $articulo->caducidad=$request->get('caducidad');
      	$articulo->estado='Activo';
 
      	//almacenar imagen
@@ -105,8 +104,8 @@ class ArticuloController extends Controller
     public function edit($idArticulo)
     {
       $articulo=Articulo::findOrFail($idArticulo);
-      $categorias=DB::table('categorias')->where('condicion','=','1')->get();
-      $marcas=DB::table('marcas')->where('condicion','=','1')->get();
+      $categorias=DB::table('categorias')->get();
+      $marcas=DB::table('marcas')->get();
       return view("articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias,"marcas"=>$marcas]);
     }
 
@@ -126,8 +125,6 @@ class ArticuloController extends Controller
       $articulo->nombre=$request->get('nombre');
      	$articulo->codigo=$request->get('codigo');
      	$articulo->descripcion=$request->get('descripcion');
-      $articulo->caducidad=$request->get('caducidad');
-     	$articulo->estado='Activo';
 
      	//almacenar imagen
 

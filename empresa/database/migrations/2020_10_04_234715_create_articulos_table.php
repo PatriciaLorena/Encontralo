@@ -31,8 +31,6 @@ class CreateArticulosTable extends Migration
             $table->string("nombre");
             $table->string("codigo");
             $table->string("descripcion");
-            $table->string("imagen");
-            $table->string("caducidad");
             $table->string("estado");
         });
     }

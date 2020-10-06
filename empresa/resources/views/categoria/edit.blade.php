@@ -3,7 +3,7 @@
 	<div class="container">
         <div class="col-8">
             <h1>Editar categoria</h1>
-            <form method="POST" action="{{route("categoria.update", [$categoria])}}">
+            <form method="POST" action="{{route("categoria.update", [$categoria])}}" >
                 @method("PUT")
                 @csrf
 								<div class="col-sm-8">

@@ -30,7 +30,6 @@ class ArticuloFormRequest extends FormRequest
           'codigo'=>'required|max:100',
           'descripcion'=>'max:512',
           'imagen'=> 'mimes:jpeg,jpg,png|max:1000',
-          'caducidad'=>'max:100',
           'estado'=>'max:100',
 
         ];

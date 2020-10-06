@@ -18,21 +18,20 @@
 <table class="table table-hover table-dark">
     <thead>
       <tr>
-        <th scope="col">usuario</th>
+        <th scope="col">Empresa</th>
         <th scope="col">Nombre</th>
         <th scope="col">Categoria</th>
         <th scope="col">Marca</th>
         <th scope="col">Codido</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Imagen</th>
-        <th scope="col">Caducidad</th>
         <th scope="col">Estado</th>
       </tr>
     </thead>
 <tbody>
       @foreach ($articulos as $art)
       <tr>
-        <td>{{ Auth::user()->name }}</td>
+        <td></td>
         <td>{{ $art->nombre}}</td>
         <td>{{ $art->categorias}}</td>
         <td>{{ $art->marcas}}</td>

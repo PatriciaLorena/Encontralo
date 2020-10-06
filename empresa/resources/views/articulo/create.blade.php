@@ -21,7 +21,7 @@
           <label class="label">Nombre</label>
             <input id="nombre" type="text" class="form-control @error('alpha') is-invalid @enderror"
             name="nombre" value="{{ old('nombre') }}" required maxlength="255"
-            autocomplete="nombre" placeholder="Ingrese el nombre de la categoria" autofocus>
+            autocomplete="nombre" placeholder="Ingrese el nombre del articulo" autofocus>
               @error('alpha')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -72,14 +72,6 @@
 				             <input type="file" name="imagen" >
 			     </div>
 		 </div>
-     <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
-       <div class="form-group">
-         <label>Caducidad</label>
-           <input required  maxlength="200" autocomplete="caducidad" value="{{ old('caducidad') }}"
-            name="caducidad" class="form-control"
-           type="text" maxlength="200" placeholder="Ingrese caducidad">
-       </div>
-     </div>
       <div class="form-group row mb-0">
         <div class="col-md-8 offset-md-4">
             <button type="submit" class="btn btn-primary">
