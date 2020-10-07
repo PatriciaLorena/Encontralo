@@ -1,0 +1,25 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Empresa extends Model
+{
+  protected $table = 'empresas';
+
+  protected $primaryKey = 'idEmpresa';
+
+  public $timestamps = false;
+
+  protected $fillable = [
+      'nombreEmpresa',
+      'direccion',
+      'ruc',
+      'telefono',
+      'correo',
+      'descripcion'
+  ];
+
+  protected $guarded = [];
+}

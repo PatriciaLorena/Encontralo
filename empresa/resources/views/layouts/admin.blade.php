@@ -103,7 +103,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Informacion</a></li>
+                <li><a href="{{url('empresa')}}" class="{{ Request::path() === 'empresa' ?
+                'nav-link active' : 'nav-link' }}"><i class="fa fa-circle-o"></i> Mis Empresas</a></li>
               </ul>
             </li>
             <li class="treeview">
