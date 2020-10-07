@@ -16,6 +16,12 @@ class CreateArticulosTable extends Migration
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('idArticulo');
             $table->timestamps();
+            $table->unsignedInteger("idEmpresa");
+            $table->foreign("idEmpresa")
+                ->references("idEmpresa")
+                ->on("empresas")
+                ->onDelete("cascade")
+                ->onUpdate("cascade");
             $table->unsignedInteger("idCategoria");
             $table->foreign("idCategoria")
                 ->references("idCategoria")
@@ -31,6 +37,7 @@ class CreateArticulosTable extends Migration
             $table->string("nombre");
             $table->string("codigo");
             $table->string("descripcion");
+            $table->string("imagen");
             $table->string("estado");
         });
     }

@@ -24,6 +24,7 @@ class ArticuloFormRequest extends FormRequest
     public function rules()
     {
         return [
+          'idEmpresa'=>'required',
           'idCategoria'=>'required',
           'idMarca'=>'required',
           'nombre'=>'required|max:100',

@@ -16,9 +16,19 @@
       @csrf
 </div>
 <div class="row">
+  <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
+  <div class="form-group">
+    <label>Empresa</label>
+    <select name="idEmpresa" class="form-control">
+      @foreach ($empresas as $emp)
+        <option value="{{$emp->idEmpresa}}">{{$emp->nombreEmpresa}}</option>
+      @endforeach
+    </select>
+  </div>
+</div>
       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
         <div class="form-group">
-          <label class="label">Nombre</label>
+          <label >Nombre</label>
             <input id="nombre" type="text" class="form-control @error('alpha') is-invalid @enderror"
             name="nombre" value="{{ old('nombre') }}" required maxlength="255"
             autocomplete="nombre" placeholder="Ingrese el nombre del articulo" autofocus>

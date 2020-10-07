@@ -18,10 +18,11 @@
 <table class="table table-hover table-dark">
     <thead>
       <tr>
-        <th scope="col">Empresa</th>
+
         <th scope="col">Nombre</th>
         <th scope="col">Categoria</th>
         <th scope="col">Marca</th>
+        <th scope="col">Empresa</th>
         <th scope="col">Codido</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Imagen</th>
@@ -31,10 +32,11 @@
 <tbody>
       @foreach ($articulos as $art)
       <tr>
-        <td></td>
+
         <td>{{ $art->nombre}}</td>
         <td>{{ $art->categorias}}</td>
         <td>{{ $art->marcas}}</td>
+        <td>{{ $art->empresas}}</td>
         <td>{{ $art->codigo}}</td>
         <td>{{ $art->descripcion}}</td>
         <td>

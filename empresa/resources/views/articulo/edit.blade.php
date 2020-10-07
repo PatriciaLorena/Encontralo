@@ -8,6 +8,7 @@
                 @csrf
 				</div>
 <div class="row">
+
 								<div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -43,6 +44,20 @@
 													@endforeach
 											</select>
                 	</div>
+								</div>
+								<div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
+									<div class="form-group">
+										<label for="empresa">Empresa</label>
+										<select name="idEmpresa" class="form-control">
+											@foreach ($empresas as $emp)
+											@if($emp->idEmpresa==$articulo->idEmpresa)
+												<option value="{{$emp->idEmpresa}}" selected>{{$emp->nombreEmpresa}}</option>
+											@else
+												<option value="{{$emp->idEmpresa}}" selected>{{$emp->nombreEmpresa}}</option>
+											@endif
+											@endforeach
+										</select>
+									</div>
 								</div>
 								<div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
                 <div class="form-group">

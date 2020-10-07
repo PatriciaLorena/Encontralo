@@ -13,8 +13,10 @@ class Articulo extends Model
     public $timestamps = false;
 
     protected $fillable = [
+
         'idCategoria',
         'idMarca',
+        'idEmpresa',
         'nombre',
         'codigo',
         'descripcion',

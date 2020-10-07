@@ -30,9 +30,11 @@ class ArticuloController extends Controller
     {
       $query=trim($request->get('searchText'));
       $articulos=DB::table('articulos as a')
+      ->join('empresas as e','a.idEmpresa','=','e.idEmpresa')
       ->join('categorias as c','a.idCategoria','=','c.idCategoria')
       ->join('marcas as m','a.idMarca','=','m.idMarca')
-      ->select('a.idArticulo','a.nombre','a.codigo','c.nombre as categorias',
+
+      ->select('a.idArticulo','a.nombre','a.codigo','e.nombreEmpresa as empresas','c.nombre as categorias',
       'm.nombre as marcas','a.descripcion','a.imagen','a.estado')
       ->where('a.nombre','LIKE','%'.$query.'%')
       ->orwhere('a.codigo','LIKE','%'.$query.'%')
@@ -50,9 +52,11 @@ class ArticuloController extends Controller
      */
     public function create()
     {
-      $categorias=DB::table('categorias')->get();
+      $empresas=DB::table('empresas')->get();
       $marcas=DB::table('marcas')->get();
-      return view("articulo.create",["categorias"=>$categorias],["marcas"=>$marcas]);
+      $categorias=DB::table('categorias')->get();
+
+      return view("articulo.create",["empresas"=>$empresas,"marcas"=>$marcas,"categorias"=>$categorias]);
     }
 
     /**
@@ -64,6 +68,7 @@ class ArticuloController extends Controller
      public function store(ArticuloFormRequest $request)
      {
      	$articulo=new Articulo;
+      $articulo->idEmpresa=$request->get('idEmpresa');
      	$articulo->idCategoria=$request->get('idCategoria');
       $articulo->idMarca=$request->get('idMarca');
       $articulo->nombre=$request->get('nombre');
@@ -104,9 +109,10 @@ class ArticuloController extends Controller
     public function edit($idArticulo)
     {
       $articulo=Articulo::findOrFail($idArticulo);
+      $empresas=DB::table('empresas')->get();
       $categorias=DB::table('categorias')->get();
       $marcas=DB::table('marcas')->get();
-      return view("articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias,"marcas"=>$marcas]);
+      return view("articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias,"marcas"=>$marcas,"empresas"=>$empresas]);
     }
 
     /**
@@ -120,6 +126,7 @@ class ArticuloController extends Controller
      {
      	$articulo=Articulo::findOrFail($idArticulo);
 
+      $articulo->idEmpresa=$request->get('idEmpresa');
       $articulo->idCategoria=$request->get('idCategoria');
       $articulo->idMarca=$request->get('idMarca');
       $articulo->nombre=$request->get('nombre');
