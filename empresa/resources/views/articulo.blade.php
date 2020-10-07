@@ -9,7 +9,7 @@
     <header>
       <h1 align="center">Reporte Articulo</h1>
     </header>
-    <table class="table table-striped">
+    <table class="table table-striped" >
         <thead>
           <tr>
 
@@ -26,18 +26,27 @@
             <tbody>
                   @foreach ($articulo as $art)
                   <tr>
-
-                    <td>{{ $art->nombre}}</td>
-                    <td>{{ $art->categorias}}</td>
-                    <td>{{ $art->marcas}}</td>
-                    <td>{{ $art->empresas}}</td>
-                    <td>{{ $art->codigo}}</td>
-                    <td>{{ $art->descripcion}}</td>
-                    <td>
-                      
-                    </td>
-                    <td>{{ $art->estado}}</td>
-          </tr>
+                      <td>{{ $art->nombre}}</td>
+                      <td>
+                        @foreach ($categoria as $cat)
+                          <option value="" selected>{{$cat->nombre}}</option>
+                        @endforeach
+                     </td>
+                      <td>
+                        @foreach ($marca as $mar)
+                          <option value="" selected>{{$mar->nombre}}</option>
+                        @endforeach
+                      </td>
+                      <td>
+                        @foreach ($empresa as $emp)
+                          <option value="" selected>{{$emp->nombreEmpresa}}</option>
+                        @endforeach
+                      </td>
+                      <td>{{ $art->codigo}}</td>
+                      <td>{{ $art->descripcion}}</td>
+                      <td>{{ $art->imagen}}</td>
+                      <td>{{ $art->estado}}</td>
+                 </tr>
           @endforeach
         </tbody>
       </table>

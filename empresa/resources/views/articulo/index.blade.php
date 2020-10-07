@@ -14,7 +14,7 @@
            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
     </nav>
-
+</div>
 <table class="table table-hover table-dark">
     <thead>
       <tr>
@@ -27,6 +27,7 @@
         <th scope="col">Descripcion</th>
         <th scope="col">Imagen</th>
         <th scope="col">Estado</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
 <tbody>
@@ -58,9 +59,9 @@
       </tr>
       @endforeach
     </tbody>
-  </table>
 
+  </table>
 {{$articulos->render()}}
-</div>
+
 
 @endsection

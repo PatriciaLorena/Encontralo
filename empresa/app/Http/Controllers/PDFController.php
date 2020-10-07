@@ -37,10 +37,11 @@ class PDFController extends Controller
         public function PDFArticulo()
           {
               $articulo = Articulo::all();
-              $empresas=DB::table('empresas')->get();
-              $marcas=DB::table('marcas')->get();
-              $categorias=DB::table('categorias')->get();
-              $pfd = PDF::loadView('articulo', compact('articulo'));
-              return $pfd->stream('articulo.pdf');
+              $categoria=DB::table('categorias')->get();
+              $marca=DB::table('marcas')->get();
+              $empresa=DB::table('empresas')->get();
+                $pfd = PDF::loadView('articulo', compact('articulo', 'categoria','marca','empresa'));
+              //setpaper para mostrar de forma horizontal
+              return $pfd->setPaper ( 'A4' , 'landscape' )->stream('articulo.pdf');
           }
 }
