@@ -27,3 +27,5 @@ Route::resource('articulo', 'ArticuloController');
 Route::resource('empresa', 'EmpresaController');
 Route::get('/pdfcategoria', 'PDFController@PDFCategoria')->name('reportePDFCategoria');
 Route::get('/pdfmarca', 'PDFController@PDFMarca')->name('reportePDFMarca');
+Route::get('/pdfempresa', 'PDFController@PDFEmpresa')->name('reportePDFEmpresa');
+Route::get('/pdfarticulo', 'PDFController@PDFArticulo')->name('reportePDFArticulo');
