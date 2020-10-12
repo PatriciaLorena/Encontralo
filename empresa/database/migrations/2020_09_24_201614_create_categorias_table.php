@@ -17,7 +17,7 @@ class CreateCategoriasTable extends Migration
             $table->increments('idCategoria');
             $table->timestamps();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
         });
     }
 

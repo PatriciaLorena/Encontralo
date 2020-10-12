@@ -19,7 +19,6 @@
                     <th scope="col">Empresa</th>
                     <th scope="col">Codido</th>
                     <th scope="col">Descripcion</th>
-                    <th scope="col">Imagen</th>
                     <th scope="col">Estado</th>
                   </tr>
                 </thead>
@@ -29,22 +28,28 @@
                       <td>{{ $art->nombre}}</td>
                       <td>
                         @foreach ($categoria as $cat)
-                          <option value="" selected>{{$cat->nombre}}</option>
+                        @if($cat->idCategoria==$art->idCategoria)
+  												<option value="{{$cat->idCategoria}}" selected>{{$cat->nombre}}</option>
+
+  											@endif
                         @endforeach
                      </td>
                       <td>
                         @foreach ($marca as $mar)
-                          <option value="" selected>{{$mar->nombre}}</option>
+                        @if($mar->idMarca==$art->idMarca)
+                          <option value="{{$mar->idMarca}}" selected>{{$mar->nombre}}</option>
+                        @endif
                         @endforeach
                       </td>
                       <td>
                         @foreach ($empresa as $emp)
-                          <option value="" selected>{{$emp->nombreEmpresa}}</option>
+                        @if($emp->idEmpresa==$art->idEmpresa)
+                          <option value="{{$emp->idEmpresa}}" selected>{{$emp->nombreEmpresa}}</option>
+                        @endif
                         @endforeach
                       </td>
                       <td>{{ $art->codigo}}</td>
                       <td>{{ $art->descripcion}}</td>
-                      <td>{{ $art->imagen}}</td>
                       <td>{{ $art->estado}}</td>
                  </tr>
           @endforeach

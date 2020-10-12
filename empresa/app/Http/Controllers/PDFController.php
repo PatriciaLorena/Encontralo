@@ -41,6 +41,7 @@ class PDFController extends Controller
               $marca=DB::table('marcas')->get();
               $empresa=DB::table('empresas')->get();
                 $pfd = PDF::loadView('articulo', compact('articulo', 'categoria','marca','empresa'));
+
               //setpaper para mostrar de forma horizontal
               return $pfd->setPaper ( 'A4' , 'landscape' )->stream('articulo.pdf');
           }
