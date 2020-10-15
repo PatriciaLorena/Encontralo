@@ -20,6 +20,8 @@ class Empresa extends Model
       'correo',
       'descripcion'
   ];
-
+  public function users(){
+    return $this->belongsToMany('User::class')->withTimesTamps();
+  }
   protected $guarded = [];
 }

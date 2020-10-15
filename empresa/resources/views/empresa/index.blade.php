@@ -38,7 +38,6 @@
         <td>
           <form action="{{route('empresa.destroy', $emp->idEmpresa)}}" method="post">
               <a href="{{ route('empresa.edit', $emp->idEmpresa)}}"><button type="button" class="btn btn-primary">Editar</button></a>
-
             @method('DELETE')   @csrf
               <button type="submit" class="btn btn-danger">Eliminar</button>
               <!-- boton eliminar con modal sin funcionamiento
@@ -47,8 +46,9 @@
           </form>
         </td>
       </tr>
+
       @endforeach
-    </tbody>
+  </tbody>
   </table>
 
 {{$empresa->render()}}

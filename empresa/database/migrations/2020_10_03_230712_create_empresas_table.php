@@ -20,8 +20,8 @@ class CreateEmpresasTable extends Migration
           $table->string('direccion');
           $table->string('ruc');
           $table->string('telefono');
-          $table->string('correo');
-          $table->string('descripcion');
+          $table->string('correo')->nullable();
+          $table->string('descripcion')->nullable();
         });
     }
 

@@ -12,6 +12,7 @@ use App\User;
 use Auth;
 
 use App\Http\Requests\EmpresaFormRequest;
+use App\Http\Requests\Usuario_EmpresaRequest;
 use DB;
 
 class EmpresaController extends Controller
@@ -25,17 +26,21 @@ class EmpresaController extends Controller
     {
       if ($request) {
       $query = trim($request->get('searchText'));
+      $usuarioEmpresa= DB::table('usuario_empresas')->get();
+      $user= DB::table('users')->get();
+      //$id = Auth::user()->id;
       $empresa = DB::table('empresas as e')
       ->join('usuario_empresas as ue','ue.idEmpresa','=','e.idEmpresa')
       ->join('users as u','ue.id','=','u.id')
       ->select('e.idEmpresa','e.nombreEmpresa','e.direccion','e.ruc', 'e.telefono','e.correo',
-      'e.descripcion')
+      'e.descripcion','ue.id')
+      //->where('ue.id','=','$id')
       ->where('nombreEmpresa', 'LIKE', '%' . $query . '%')
       ->groupBy('e.idEmpresa','e.nombreEmpresa','e.direccion','e.ruc', 'e.telefono','e.correo',
-      'e.descripcion')
+      'e.descripcion','ue.id')
         ->paginate(5);
 
-      return view('empresa.index', ['empresa' => $empresa, 'searchText'=> $query]);
+      return view('empresa.index', ['empresa' => $empresa, 'usuario_empresas'=>$usuarioEmpresa, 'users'=>$user, 'searchText'=> $query]);
 
     }
     }
@@ -48,7 +53,8 @@ class EmpresaController extends Controller
     public function create()
     {
         $empresas=DB::table('empresas')->get();
-        return view("empresa.create",["empresas"=>$empresas]);
+        $usuarioEmpresa = DB::table('usuario_empresas')->get();
+        return view("empresa.create",["empresas"=>$empresas,"usuario_empresas"=>$usuarioEmpresa]);
     }
 
     /**
@@ -114,7 +120,9 @@ class EmpresaController extends Controller
      */
     public function edit($idEmpresa)
     {
-        return view('empresa.edit', ['empresa' => Empresa::findOrFail($idEmpresa)]);
+      $usuarioEmpresa = DB::table('usuario_empresas')->get();
+        return view('empresa.edit', ['empresa' => Empresa::findOrFail($idEmpresa),"usuario_empresas"=>$usuarioEmpresa]);
+
     }
 
     /**

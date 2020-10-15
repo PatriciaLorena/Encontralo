@@ -29,6 +29,7 @@ class CreateUsuarioEmpresasTable extends Migration
               ->onDelete("cascade")
               ->onUpdate("cascade");
 
+
         });
     }
 

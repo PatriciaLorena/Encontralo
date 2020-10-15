@@ -38,6 +38,9 @@ class User extends Authenticatable
     ];
     public function getId()
 {
-     return $this->id;
+  return $this->id;
+}
+    public function empresas(){
+      return $this->belongsToMany('Empresa::class')->withTimesTamps();
 }
 }

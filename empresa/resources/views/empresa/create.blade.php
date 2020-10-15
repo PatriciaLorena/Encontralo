@@ -76,7 +76,7 @@
               <div class="form-group">
                 <label>Correo</label>
                     <input id="correo" type="text" class="form-control @error('alpha') is-invalid @enderror"
-                    name="correo" value="{{ old('correo') }}" required maxlength="255"
+                    name="correo" value="{{ old('correo') }}" maxlength="255"
                     autocomplete="correo" placeholder="Ingrese el correo de la empresa" autofocus>
                         @error('alpha')
                             <span class="invalid-feedback" role="alert">
@@ -88,7 +88,7 @@
       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
         <div class="form-group">
           <label>Descripcion</label>
-            <input required  maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
+            <input   maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
              name="descripcion" class="form-control"
             type="text" maxlength="200" placeholder="Ingrese su descripcion">
         </div>

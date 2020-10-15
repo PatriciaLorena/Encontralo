@@ -63,7 +63,7 @@
       <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
         <div class="form-group">
           <label>Codigo</label>
-            <input required  maxlength="200" autocomplete="codigo" value="{{ old('codigo') }}"
+            <input  maxlength="200" autocomplete="codigo" value="{{ old('codigo') }}"
              name="codigo" class="form-control"
             type="text" maxlength="200" placeholder="Ingrese su codigo">
         </div>
@@ -71,7 +71,7 @@
       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
         <div class="form-group">
           <label>Descripcion</label>
-            <input required  maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
+            <input maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
              name="descripcion" class="form-control"
             type="text" maxlength="200" placeholder="Ingrese su descripcion">
         </div>

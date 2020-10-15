@@ -17,7 +17,7 @@ class CreateMarcasTable extends Migration
           $table->increments('idMarca');
           $table->timestamps();
           $table->string('nombre');
-          $table->string('descripcion');
+          $table->string('descripcion')->nullable();
         });
     }
 

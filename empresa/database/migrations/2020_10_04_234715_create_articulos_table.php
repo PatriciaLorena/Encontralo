@@ -35,9 +35,9 @@ class CreateArticulosTable extends Migration
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
             $table->string("nombre");
-            $table->string("codigo");
-            $table->string("descripcion");
-            $table->string("imagen");
+            $table->string("codigo")->nullable();
+            $table->string("descripcion")->nullable();
+            $table->string("imagen")->nullable();
             $table->string("estado");
         });
     }

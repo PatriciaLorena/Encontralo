@@ -31,7 +31,7 @@
       <div class="col-sm-5">
         <div class="form-group">
           <label class="label">Descripcion</label>
-            <input required  maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
+            <input maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
              name="descripcion" class="form-control"
             type="text" maxlength="200" placeholder="Ingrese su descripcion">
         </div>
