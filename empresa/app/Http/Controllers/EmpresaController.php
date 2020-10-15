@@ -28,13 +28,13 @@ class EmpresaController extends Controller
       $query = trim($request->get('searchText'));
       $usuarioEmpresa= DB::table('usuario_empresas')->get();
       $user= DB::table('users')->get();
-      //$id = Auth::user()->id;
+      $id = Auth::user()->id;
       $empresa = DB::table('empresas as e')
       ->join('usuario_empresas as ue','ue.idEmpresa','=','e.idEmpresa')
       ->join('users as u','ue.id','=','u.id')
       ->select('e.idEmpresa','e.nombreEmpresa','e.direccion','e.ruc', 'e.telefono','e.correo',
       'e.descripcion','ue.id')
-      //->where('ue.id','=','$id')
+      ->where('ue.id','=','1')
       ->where('nombreEmpresa', 'LIKE', '%' . $query . '%')
       ->groupBy('e.idEmpresa','e.nombreEmpresa','e.direccion','e.ruc', 'e.telefono','e.correo',
       'e.descripcion','ue.id')
