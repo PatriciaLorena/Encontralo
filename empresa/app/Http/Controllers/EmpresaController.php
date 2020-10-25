@@ -34,7 +34,7 @@ class EmpresaController extends Controller
       ->join('users as u','ue.id','=','u.id')
       ->select('e.idEmpresa','e.nombreEmpresa','e.direccion','e.ruc', 'e.telefono','e.correo',
       'e.descripcion','ue.id')
-      ->where('ue.id','=','1')
+      ->where('ue.id','=',$id)
       ->where('nombreEmpresa', 'LIKE', '%' . $query . '%')
       ->groupBy('e.idEmpresa','e.nombreEmpresa','e.direccion','e.ruc', 'e.telefono','e.correo',
       'e.descripcion','ue.id')
