@@ -18,7 +18,7 @@
         <div class="form-group">
           <label class="label">Nombre</label>
             <input id="nombre" type="text" class="form-control @error('alpha') is-invalid @enderror"
-            name="nombre" value="{{ old('nombre') }}" maxlength="255"
+            name="nombre" value="{{ old('nombre') }}" required maxlength="255"
             autocomplete="nombre" placeholder="Ingrese el nombre de la categoria" autofocus>
               @error('alpha')
                 <span class="invalid-feedback" role="alert">

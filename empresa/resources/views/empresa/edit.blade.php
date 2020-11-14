@@ -43,7 +43,7 @@
 								<div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
                 <div class="form-group">
                     <label for="correo">Correo</label>
-                    <input required maxlength="255" value="{{$empresa->correo}}" autocomplete="off" name="correo"
+                    <input maxlength="255" value="{{$empresa->correo}}" autocomplete="off" name="correo"
                            class="form-control"
                            type="text" placeholder="Correo de la empresa">
                 </div>
@@ -51,7 +51,7 @@
 								<div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input required unique maxlength="100" value="{{$empresa->descripcion}}" autocomplete="off" name="descripcion"
+                    <input unique maxlength="100" value="{{$empresa->descripcion}}" autocomplete="off" name="descripcion"
                            class="form-control"
                            type="text" placeholder="descripcion">
                 </div>

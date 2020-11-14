@@ -70,7 +70,7 @@
 								<div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input required unique maxlength="100" value="{{$articulo->descripcion}}" autocomplete="off" name="descripcion"
+                    <input unique maxlength="100" value="{{$articulo->descripcion}}" autocomplete="off" name="descripcion"
                            class="form-control"
                            type="text" placeholder="descripcion">
                 </div>
