@@ -20,7 +20,7 @@ public class ArticuloApiAdapter {
         httpClient.addInterceptor(logging);
 
 
-        String baseUrl = "http://192.168.0.11:8000/api/";
+        String baseUrl = "http://192.168.0.12:8000/api/";
 
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()

@@ -1,8 +1,9 @@
 package com.example.movil;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.movil.io.ArticuloApiAdapter;
 import com.example.movil.model.Article;
