@@ -11,6 +11,13 @@ public class Article {
     private String imagen;
     private String estado;
 
+    public Article(int idArticulo, String nombre, String codigo, String descripcion) {
+        this.idArticulo = idArticulo;
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+    }
+
     public int getIdArticulo() {
         return idArticulo;
     }

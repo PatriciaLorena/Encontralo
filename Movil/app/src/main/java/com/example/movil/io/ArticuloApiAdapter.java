@@ -19,8 +19,7 @@ public class ArticuloApiAdapter {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
 
-
-        String baseUrl = "http://192.168.0.12:8000/api/";
+        String baseUrl = "http://192.168.0.16:8000/api/";
 
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()
