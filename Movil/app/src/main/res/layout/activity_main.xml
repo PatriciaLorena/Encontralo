@@ -8,41 +8,35 @@
         android:id="@+id/etBuscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Buscar Producto"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:hint="Buscar Producto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buscar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etBuscador"
+        android:layout_marginTop="0dp"
         android:text="@string/boton_buscar"
-        android:theme="@style/MiBotonBuscar"
-        />
-
-
+        android:theme="@style/MiBotonBuscar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLista"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="378dp"
+        android:layout_height="618dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="-35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBuscador">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="11dp" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+
 </RelativeLayout>
 
 

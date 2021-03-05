@@ -1,0 +1,77 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingTop="@dimen/vertical_margin"
+    android:paddingLeft="@dimen/horizontal_margin"
+    android:paddingRight="@dimen/horizontal_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+
+    >
+
+    <EditText
+        android:id="@+id/etNombreCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_completo"
+         />
+
+    <TextView
+        android:id="@+id/etFechaNacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNombreCompleto"
+        android:gravity="center_horizontal"
+        android:text="@string/fecha_nacimiento"
+        android:textSize="@dimen/textoDimension"
+         />
+
+    <DatePicker
+        android:id="@+id/dpFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_below="@+id/etFechaNacimiento">
+
+    </DatePicker>
+
+    <EditText
+        android:id="@+id/etTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/telefono"
+        android:layout_below="@+id/dpFecha"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:layout_below="@+id/etTelefono"/>
+
+    <EditText
+        android:id="@+id/etDescripcionContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/descripcion_contacto"
+        android:layout_below="@+id/etEmail"/>
+
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/boton_siguiente"
+        android:theme="@style/MiBotonBuscar"
+        android:layout_below="@+id/etDescripcionContacto"/>
+
+        />
+
+</RelativeLayout>
+

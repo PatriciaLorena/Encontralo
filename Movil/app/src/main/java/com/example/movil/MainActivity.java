@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -17,6 +18,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.movil.io.ArticuloApiAdapter;
 import com.example.movil.model.Article;
+
+import com.example.movil.ui.adapter.ArticuloAdapter;
+
+import com.example.movil.AdaptadorArticulos;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,16 +37,33 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements Callback<ArrayList<Article>> {
 
     EditText etBuscador;
-    RecyclerView rvLista;
+    RecyclerView mRecyclerView;
     AdaptadorArticulos adaptador;
     List<Article> listaArticulos;
+
+    private ArticuloAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mRecyclerView = findViewById(R.id.rvLista);
+
+        mRecyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+
+         mAdapter = new ArticuloAdapter();
+        mRecyclerView.setAdapter(mAdapter);
+
+       //adaptador = new AdaptadorArticulos(MainActivity.this, listaArticulos);
+        //mRecyclerView.setAdapter(adaptador);
+
 
         Call<ArrayList<Article>> call = ArticuloApiAdapter.getApiService().getArticulo();
         call.enqueue(this);
-        setContentView(R.layout.activity_main);
+
 
         etBuscador = findViewById(R.id.etBuscador);
         etBuscador.addTextChangedListener(new TextWatcher() {
@@ -53,23 +75,22 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
 
             @Override
             public void afterTextChanged(Editable s) {
-                filtrar(s.toString());
+            //    filtrar(s.toString());
             }
         });
-        rvLista = findViewById(R.id.rvLista);
-        rvLista.setLayoutManager(new GridLayoutManager(this, 1));
-        listaArticulos =new ArrayList<Article>();
 
-        obtenerArticulos();
+       mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        //listaArticulos =new ArrayList<Article>();
+        //obtenerArticulos();
 
-        adaptador = new AdaptadorArticulos(MainActivity.this, listaArticulos);
-        rvLista.setAdapter(adaptador);
+
+
     }
 
-    public void obtenerArticulos(){
+   /* public void obtenerArticulos(){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 getResources().getString(R.string.URL_ARTICULOS),
                 new com.android.volley.Response.Listener<String>() {
                     @Override
@@ -90,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
                                 );
                             }
                             adaptador = new AdaptadorArticulos(MainActivity.this, listaArticulos);
-                            rvLista.setAdapter(adaptador);
+                            mRecyclerView.setAdapter(adaptador);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -115,13 +136,15 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
             }
         }
         adaptador.filtrar(filtrarLista);
-    }
+    }*/
 
     @Override
     public void onResponse(Call<ArrayList<Article>> call, Response<ArrayList<Article>> response) {
         if(response.isSuccessful()){
             ArrayList<Article> articles = response.body();
-            Log.d("onResponse articles", "Size of articles =>" + articles.size());
+            //Log.d("onResponse articles", "Size of articles =>" + articles.size());
+
+            mAdapter.setDataSet(articles);
         }
     }
 
