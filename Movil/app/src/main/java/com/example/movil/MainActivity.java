@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
         call.enqueue(this);
 
 
-        etBuscador = findViewById(R.id.etBuscador);
+    /*    etBuscador = findViewById(R.id.etBuscador);
         etBuscador.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
             public void afterTextChanged(Editable s) {
             //    filtrar(s.toString());
             }
-        });
+        });  */
 
        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         //listaArticulos =new ArrayList<Article>();

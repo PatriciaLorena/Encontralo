@@ -13,6 +13,8 @@ import com.example.movil.model.Article;
 import java.util.ArrayList;
 
 public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHolder>{
+
+    
     private ArrayList<Article> mDataSet;
 
     // Obtener referencias de los componentes visuales para cada elemento
