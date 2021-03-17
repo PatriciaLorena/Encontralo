@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">Encontralo!!</string>
-    <string name="boton_buscar">Buscar</string>
-    <string name="URL_ARTICULOS">http://192.168.0.11:8000/api/articulo</string>
+    <string name="app_name">Encontralo!!!</string>
 </resources>

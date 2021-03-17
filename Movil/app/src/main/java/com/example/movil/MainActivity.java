@@ -1,155 +1,108 @@
 package com.example.movil;
 
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.widget.EditText;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.movil.io.ArticuloApiAdapter;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import com.example.movil.adapter.RecyclerAdapter;
 import com.example.movil.model.Article;
+import com.example.movil.retrofit_data.RetrofitApiService;
+import com.example.movil.retrofit_data.RetrofitClient;
 
-import com.example.movil.ui.adapter.ArticuloAdapter;
-
-import com.example.movil.AdaptadorArticulos;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements Callback<ArrayList<Article>> {
+public class MainActivity extends AppCompatActivity implements RecyclerAdapter.RecyclerItemClick, SearchView.OnQueryTextListener {
+    private RecyclerView rvLista;
+    private SearchView svSearch;
+    private RecyclerAdapter adapter;
+    private List<Article> items;
 
-    EditText etBuscador;
-    RecyclerView mRecyclerView;
-    AdaptadorArticulos adaptador;
-    List<Article> listaArticulos;
-
-    private ArticuloAdapter mAdapter;
+    private RetrofitApiService retrofitApiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRecyclerView = findViewById(R.id.rvLista);
 
-        mRecyclerView.setHasFixedSize(true);
+        initViews();
+        initValues();
+        initListener();
+    }
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(layoutManager);
+    private void initViews(){
+        rvLista = findViewById(R.id.rvLista);
+        svSearch = findViewById(R.id.svShearch);
+    }
 
-         mAdapter = new ArticuloAdapter();
-        mRecyclerView.setAdapter(mAdapter);
+    private void initValues(){
+        retrofitApiService = RetrofitClient.getApiService();
 
-       //adaptador = new AdaptadorArticulos(MainActivity.this, listaArticulos);
-        //mRecyclerView.setAdapter(adaptador);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        rvLista.setLayoutManager(manager);
 
+        getItemsSQL();
+    }
 
-        Call<ArrayList<Article>> call = ArticuloApiAdapter.getApiService().getArticulo();
-        call.enqueue(this);
-
-
-    /*    etBuscador = findViewById(R.id.etBuscador);
-        etBuscador.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            //    filtrar(s.toString());
-            }
-        });  */
-
-       mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-        //listaArticulos =new ArrayList<Article>();
-        //obtenerArticulos();
-
-
+    private void initListener(){
+        svSearch.setOnQueryTextListener(this);
 
     }
 
-   /* public void obtenerArticulos(){
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+   /* private List<Article> getItems(){
+        List<Article> articles = new ArrayList<>();
+        articles.add(new Article(1, "remera", "002", "nuevo deprimeracaliddad de uno hohjkj njhguu khggyj gghhgf ", R.drawable.remera1));
+        articles.add(new Article(2, "remera", "0025", "usado", R.drawable.remera2));
+        articles.add(new Article(3, "pantalon", "003", "nuevo", R.drawable.pantalon));
+        articles.add(new Article(2, "remera", "0025", "usado", R.drawable.remera2));
+        articles.add(new Article(3, "pantalon", "003", "nuevo", R.drawable.pantalon));
+        articles.add(new Article(2, "remera", "0025", "usado", R.drawable.remera2));
+        articles.add(new Article(3, "pantalon", "003", "nuevo", R.drawable.pantalon));
+        articles.add(new Article(3, "celular", "003", "nuevo", R.drawable.celular));
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                getResources().getString(R.string.URL_ARTICULOS),
-                new com.android.volley.Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            JSONArray jsonArray = jsonObject.getJSONArray("Articulos");
-
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                                listaArticulos.add(
-                                        new Article(
-                                                jsonObject1.getInt("idArticulo"),
-                                                jsonObject1.getString("nombre"),
-                                                jsonObject1.getString("codigo"),
-                                                jsonObject1.getString("descripcion")
-                                        )
-                                );
-                            }
-                            adaptador = new AdaptadorArticulos(MainActivity.this, listaArticulos);
-                            mRecyclerView.setAdapter(adaptador);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        }
-        );
-
-        requestQueue.add(stringRequest);
-    }
-
-    public void filtrar(String texto){
-        ArrayList<Article> filtrarLista = new ArrayList<Article>();
-
-        for (Article article : listaArticulos){
-            if(article.getNombre().toLowerCase().contains(texto.toLowerCase())){
-                filtrarLista.add(article);
-            }
-        }
-        adaptador.filtrar(filtrarLista);
+        return articles;
     }*/
 
-    @Override
-    public void onResponse(Call<ArrayList<Article>> call, Response<ArrayList<Article>> response) {
-        if(response.isSuccessful()){
-            ArrayList<Article> articles = response.body();
-            //Log.d("onResponse articles", "Size of articles =>" + articles.size());
+    private void getItemsSQL(){
+        retrofitApiService.getItemsDB().enqueue(new Callback<List<Article>>() {
+            @Override
+            public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
 
-            mAdapter.setDataSet(articles);
-        }
+                items = response.body();
+                adapter = new RecyclerAdapter(items, MainActivity.this);
+                rvLista.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<Article>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Error: "+ t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
-    public void onFailure(Call<ArrayList<Article>> call, Throwable t) {
+    public void itemClick(Article item) {
+        Intent intent = new Intent(this, MainActivity2.class);
+        intent.putExtra("itemDetail", item);
+        startActivity(intent);
+    }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        adapter.filter(newText);
+        return true;
     }
 }

@@ -1,6 +1,8 @@
 package com.example.movil.model;
 
-public class Article {
+import java.io.Serializable;
+
+public class Article implements Serializable {
     private int idArticulo;
     private int idEmpresa;
     private int idCategoria;
@@ -11,11 +13,12 @@ public class Article {
     private String imagen;
     private String estado;
 
-    public Article(int idArticulo, String nombre, String codigo, String descripcion) {
+    public Article(int idArticulo, String nombre, String codigo, String descripcion, String imagen) {
         this.idArticulo = idArticulo;
         this.nombre = nombre;
         this.codigo = codigo;
         this.descripcion = descripcion;
+        this.imagen = imagen;
     }
 
     public int getIdArticulo() {
