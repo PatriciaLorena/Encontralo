@@ -2,7 +2,9 @@ package com.example.movil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,5 +44,10 @@ public class MainActivity2 extends AppCompatActivity {
                 .into(this.imgItemDetail);
         tvNombreDetail.setText(itemDetail.getNombre());
         tvDescripcionDetail.setText(itemDetail.getDescripcion());
+    }
+
+    public void irMapa(View v){
+        Intent i = new Intent(this, Ubicacion.class);
+        startActivity(i);
     }
 }
