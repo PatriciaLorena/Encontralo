@@ -1,7 +1,5 @@
 package com.example.movil.adapter;
 
-import android.app.LauncherActivity;
-import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.movil.MainActivity2;
 import com.example.movil.model.Article;
 
 import androidx.annotation.NonNull;

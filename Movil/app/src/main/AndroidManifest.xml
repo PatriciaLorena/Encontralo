@@ -34,7 +34,7 @@
         <activity
             android:name=".Ubicacion"
             android:label="@string/title_activity_ubicacion"></activity>
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".Información" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

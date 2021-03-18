@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.movil.model.Article;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity2 extends AppCompatActivity {
+public class Información extends AppCompatActivity {
     private ImageView imgItemDetail;
     private TextView tvNombreDetail;
     private TextView tvDescripcionDetail;

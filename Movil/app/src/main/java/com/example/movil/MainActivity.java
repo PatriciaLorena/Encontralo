@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.R
 
     @Override
     public void itemClick(Article item) {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, Información.class);
         intent.putExtra("itemDetail", item);
         startActivity(intent);
     }
