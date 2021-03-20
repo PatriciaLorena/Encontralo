@@ -42,6 +42,7 @@
                          </span>
                      @enderror
             </div>
+            <a href="{{ route('reportePDFEmpresa')}}" target="_blank" type="button" class="btn btn-primary">Mostrar en el mapa</a>
         </div>
 
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -92,6 +93,7 @@
              name="descripcion" class="form-control"
             type="text" maxlength="200" placeholder="Ingrese su descripcion">
         </div>
+
       </div>
       <div class="form-group row mb-0">
         <div class="col-md-8 offset-md-4">
