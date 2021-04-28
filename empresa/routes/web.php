@@ -29,3 +29,11 @@ Route::get('/pdfcategoria', 'PDFController@PDFCategoria')->name('reportePDFCateg
 Route::get('/pdfmarca', 'PDFController@PDFMarca')->name('reportePDFMarca');
 Route::get('/pdfempresa', 'PDFController@PDFEmpresa')->name('reportePDFEmpresa');
 Route::get('/pdfarticulo', 'PDFController@PDFArticulo')->name('reportePDFArticulo');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

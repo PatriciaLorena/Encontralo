@@ -1,5 +1,8 @@
 @extends ('layouts.admin')
 @section ('contenido')
+
+
+
 <div class="container">
  @if(count($errors) > 0)
 		<div class="errors">
@@ -42,7 +45,8 @@
                          </span>
                      @enderror
             </div>
-            <a href="{{ route('reportePDFEmpresa')}}" target="_blank" type="button" class="btn btn-primary">Mostrar en el mapa</a>
+            <a href="{{ route('reportePDFEmpresa')}}" target="_blank" type="button" class="btn btn-primary">Mostrar en el mapa ubicacion</a>
+
         </div>
 
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
