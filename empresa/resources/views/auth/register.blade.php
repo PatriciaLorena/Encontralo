@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::auth.register')
 
 @section('content')
 <div class="wrapper fadeInDown">
@@ -61,7 +61,7 @@
 
 
 <input type="submit" class="fadeIn fourth" value="Regirtrarse">
-          
+
                     </form>
                 </div>
     </div>
