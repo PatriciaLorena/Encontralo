@@ -2,7 +2,7 @@
 @section ('contenido')
 
 
-
+<a href="gmaps" target="_blank" type="button" class="btn btn-primary">mapas</a>
 <div class="container">
  @if(count($errors) > 0)
 		<div class="errors">
@@ -45,7 +45,9 @@
                          </span>
                      @enderror
             </div>
-            <a href="{{ route('reportePDFEmpresa')}}" target="_blank" type="button" class="btn btn-primary">Mostrar en el mapa ubicacion</a>
+            <iframe src = "mapa.php" height = "500px" width = "500px" > </iframe >
+            <a href= target="_blank" type="button" class="btn btn-primary">Mostrar en el mapa ubicacion</a>
+
 
         </div>
 
