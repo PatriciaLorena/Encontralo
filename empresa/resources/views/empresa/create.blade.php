@@ -117,8 +117,8 @@
 
 <script type="text/javascript">
   function iniciarMapa(){
-    var latitud = 19.388672;
-    var longitud = -99.174023;
+    var latitud = -27.359391894383084;
+    var longitud = -55.84904911875535;
 
     coordenadas = {
       lng: longitud,
@@ -131,9 +131,20 @@
   function generarMapa(coordenadas){
     var mapa = new google.maps.Map(document.getElementById('mapa'),
     {
-        zoom:12,
+        zoom:18,
         center: new google.maps.LatLng(coordenadas.lat,coordenadas.lng)
     });
+
+    marcador = new google.maps.Marker({
+      map: mapa,
+      draggable: true,
+      position: new google.maps.LatLng(coordenadas.lat, coordenadas.lng)
+    });
+
+    marcador.addListener('dragend', function(event){
+      document.getElementById("latitud").value = this.getPosition().lat();
+      document.getElementById("longitud").value = this.getPosition().lng();
+    })
   }
 
 </script>
