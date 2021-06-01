@@ -99,14 +99,16 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="latidud">Latitud</label>
-            <input type="text" id="latitud" name="latitud" value="" class="form-control">
+            <input type="text" id="latitud" name="latitud" value="" class="form-control"
+            placeholder="Ingrese su latitud">
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label for="longitud">Longitud</label>
-            <input type="text" id="longitud" name="longitud" value="" class="form-control">
+            <input type="text" id="longitud" name="longitud" value="" class="form-control"
+            placeholder="Ingrese su longitud">
           </div>
         </div>
 <label for="longitud">Marcar en el mapa la ubicación de su local</label>

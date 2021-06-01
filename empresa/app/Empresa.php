@@ -18,7 +18,9 @@ class Empresa extends Model
       'ruc',
       'telefono',
       'correo',
-      'descripcion'
+      'descripcion',
+      'latidud',
+      'longitud'
   ];
   public function users(){
     return $this->belongsToMany('User::class')->withTimesTamps();

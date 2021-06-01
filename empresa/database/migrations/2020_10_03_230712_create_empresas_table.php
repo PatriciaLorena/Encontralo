@@ -22,6 +22,8 @@ class CreateEmpresasTable extends Migration
           $table->string('telefono');
           $table->string('correo')->nullable();
           $table->string('descripcion')->nullable();
+          $table->string('latitud');
+          $table->string('longitud');
         });
     }
 
