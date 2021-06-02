@@ -144,6 +144,8 @@ class EmpresaController extends Controller
         $empresa-> telefono = $request->get('telefono');
         $empresa-> correo = $request->get('correo');
         $empresa-> descripcion = $request->get('descripcion');
+        $empresa-> latitud = $request->get('latitud');
+        $empresa-> longitud = $request->get('longitud');
         $empresa->update();
 
         return redirect( '/empresa');

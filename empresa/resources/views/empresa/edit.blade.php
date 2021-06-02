@@ -56,6 +56,68 @@
                            type="text" placeholder="descripcion">
                 </div>
 								</div>
+
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="latidud">Latitud</label>
+										<input type="text" value="{{$empresa->latitud}}" id="latitud" name="latitud" value="" class="form-control"
+										placeholder="Ingrese su latitud">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="longitud">Longitud</label>
+										<input type="text" value="{{$empresa->longitud}}" id="longitud" name="longitud" value="" class="form-control"
+										placeholder="Ingrese su longitud">
+									</div>
+								</div>
+				<label for="longitud">Mover el marcador para cambiar la ubicación de su local</label>
+					<div class="col-md-12">
+						<div class="" id="mapa" style="width: 100%; height:500px"></div>
+					</div>
+
+
+				<script type="text/javascript">
+					function iniciarMapa(){
+						var latitud = -27.359391894383084;
+						var longitud = -55.84904911875535;
+
+						coordenadas = {
+							lng: longitud,
+							lat: latitud
+						}
+
+						generarMapa(coordenadas);
+					}
+
+					function generarMapa(coordenadas){
+						var mapa = new google.maps.Map(document.getElementById('mapa'),
+						{
+								zoom:18,
+								center: new google.maps.LatLng(coordenadas.lat,coordenadas.lng)
+						});
+
+						marcador = new google.maps.Marker({
+							map: mapa,
+							draggable: true,
+							position: new google.maps.LatLng(coordenadas.lat, coordenadas.lng)
+						});
+
+						marcador.addListener('dragend', function(event){
+							document.getElementById("latitud").value = this.getPosition().lat();
+							document.getElementById("longitud").value = this.getPosition().lng();
+						})
+					}
+
+				</script>
+
+				<script src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyCo4LRSwMXoWZhaq-7YmGBhggYihH4ZzZE&callback=iniciarMapa">
+				 </script>
+
+
+
                 <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
