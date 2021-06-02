@@ -72,6 +72,8 @@ class EmpresaController extends Controller
         $empresa-> telefono = request( 'telefono');
         $empresa-> correo = request( 'correo');
         $empresa-> descripcion = request( 'descripcion');
+        $empresa-> latitud = request( 'latitud');
+        $empresa-> longitud = request( 'longitud');
         $empresa->save();
 
 

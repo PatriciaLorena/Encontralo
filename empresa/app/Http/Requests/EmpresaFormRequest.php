@@ -30,6 +30,8 @@ class EmpresaFormRequest extends FormRequest
           'telefono'=>'required|max:45',
           'correo'=>'required|max:100',
           'descripcion'=>'max:512',
+          'latitud'=>'max:512',
+          'longitud'=>'max:512',
         ];
     }
 }

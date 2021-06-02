@@ -111,7 +111,7 @@
             placeholder="Ingrese su longitud">
           </div>
         </div>
-<label for="longitud">Marcar en el mapa la ubicación de su local</label>
+<label for="longitud">Mover el marcador para guardar la ubicación de su local</label>
   <div class="col-md-12">
     <div class="" id="mapa" style="width: 100%; height:500px"></div>
   </div>
