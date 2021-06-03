@@ -16,7 +16,7 @@
       @csrf
 </div>
 <div class="row">
-      <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+      <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
           <div class="form-group">
             <label>Nombre</label>
                 <input id="nombreEmpresa" type="text" class="form-control @error('alpha') is-invalid @enderror"
@@ -30,7 +30,7 @@
            </div>
        </div>
 
-       <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+       <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
            <div class="form-group">
              <label>Direccion</label>
                  <input id="direccion" type="text" class="form-control @error('alpha') is-invalid @enderror"
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+        <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
               <label>Ruc</label>
                   <input id="ruc" type="text" class="form-control @error('alpha') is-invalid @enderror"
@@ -58,7 +58,7 @@
              </div>
          </div>
 
-         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+         <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
              <div class="form-group">
                <label>Telefono</label>
                    <input id="telefono" type="text" class="form-control @error('alpha') is-invalid @enderror"
@@ -72,7 +72,7 @@
               </div>
           </div>
 
-          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+          <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
               <div class="form-group">
                 <label>Correo</label>
                     <input id="correo" type="text" class="form-control @error('alpha') is-invalid @enderror"
@@ -85,7 +85,7 @@
                         @enderror
                </div>
            </div>
-      <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+      <div class="col-lg-5 col-sm-6 col-md-6 col-xs-12">
         <div class="form-group">
           <label>Descripcion</label>
             <input   maxlength="200" autocomplete="descripcion" value="{{ old('descripcion') }}"
@@ -96,7 +96,7 @@
 
 
 
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="form-group">
             <label for="latidud">Latitud</label>
             <input type="text" id="latitud" name="latitud" value="" class="form-control"
@@ -104,20 +104,21 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="form-group">
             <label for="longitud">Longitud</label>
             <input type="text" id="longitud" name="longitud" value="" class="form-control"
             placeholder="Ingrese su longitud">
           </div>
         </div>
-<label for="longitud">Mover el marcador para guardar la ubicación de su local</label>
+<label><h4><b>&nbsp;&nbsp;&nbsp;&nbsp;Mover el marcador para guardar la ubicación de su local</b></h4></label>
   <div class="col-md-12">
-    <div class="" id="mapa" style="width: 100%; height:500px"></div>
+    <div class="" id="mapa" style="width: 90%; height:500px"></div>
   </div>
 
 
 <script type="text/javascript">
+
   function iniciarMapa(){
     var latitud = -27.359391894383084;
     var longitud = -55.84904911875535;

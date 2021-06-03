@@ -58,7 +58,7 @@
 								</div>
 
 
-								<div class="col-md-6">
+								<div class="col-md-5">
 									<div class="form-group">
 										<label for="latidud">Latitud</label>
 										<input type="text" value="{{$empresa->latitud}}" id="latitud" name="latitud" value="" class="form-control"
@@ -66,23 +66,23 @@
 									</div>
 								</div>
 
-								<div class="col-md-6">
+								<div class="col-md-5">
 									<div class="form-group">
 										<label for="longitud">Longitud</label>
 										<input type="text" value="{{$empresa->longitud}}" id="longitud" name="longitud" value="" class="form-control"
 										placeholder="Ingrese su longitud">
 									</div>
 								</div>
-				<label for="longitud">Mover el marcador para cambiar la ubicación de su local</label>
+				<label><h4><b>&nbsp;&nbsp;&nbsp;&nbsp;Mover el marcador para cambiar la ubicación de su local</b></h4></label>
 					<div class="col-md-12">
-						<div class="" id="mapa" style="width: 100%; height:500px"></div>
+						<div class="" id="mapa" style="width: 90%; height:500px"></div>
 					</div>
 
 
 				<script type="text/javascript">
 					function iniciarMapa(){
-						var latitud = -27.359391894383084;
-						var longitud = -55.84904911875535;
+						var latitud = "{{$empresa->latitud}}";
+						var longitud = "{{$empresa->longitud}}";
 
 						coordenadas = {
 							lng: longitud,
@@ -115,7 +115,6 @@
 
 				<script src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyCo4LRSwMXoWZhaq-7YmGBhggYihH4ZzZE&callback=iniciarMapa">
 				 </script>
-
 
 
                 <div class="form-group row mb-0">
