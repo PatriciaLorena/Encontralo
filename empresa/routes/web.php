@@ -19,6 +19,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+Route::group(['middleware' => 'auth'], function () {
+
+    // Las rutas que incluyas aquí pasarán por el middleware 'auth'
+
+    Route::resource('categoria', 'CategoriaController');
+    Route::resource('marca', 'MarcaController');
+    Route::resource('articulo', 'ArticuloController');
+    Route::resource('empresa', 'EmpresaController');
+
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('categoria', 'CategoriaController');
@@ -29,7 +42,7 @@ Route::get('/pdfcategoria', 'PDFController@PDFCategoria')->name('reportePDFCateg
 Route::get('/pdfmarca', 'PDFController@PDFMarca')->name('reportePDFMarca');
 Route::get('/pdfempresa', 'PDFController@PDFEmpresa')->name('reportePDFEmpresa');
 Route::get('/pdfarticulo', 'PDFController@PDFArticulo')->name('reportePDFArticulo');
-
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

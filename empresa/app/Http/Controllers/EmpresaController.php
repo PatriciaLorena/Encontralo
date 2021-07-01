@@ -41,7 +41,6 @@ class EmpresaController extends Controller
         ->paginate(5);
 
       return view('empresa.index', ['empresa' => $empresa, 'usuario_empresas'=>$usuarioEmpresa, 'users'=>$user, 'searchText'=> $query]);
-
     }
     }
 
