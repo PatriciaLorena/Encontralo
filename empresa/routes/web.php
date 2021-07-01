@@ -30,8 +30,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('empresa', 'EmpresaController');
 
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('categoria', 'CategoriaController');
@@ -43,6 +41,8 @@ Route::get('/pdfmarca', 'PDFController@PDFMarca')->name('reportePDFMarca');
 Route::get('/pdfempresa', 'PDFController@PDFEmpresa')->name('reportePDFEmpresa');
 Route::get('/pdfarticulo', 'PDFController@PDFArticulo')->name('reportePDFArticulo');
 });
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
