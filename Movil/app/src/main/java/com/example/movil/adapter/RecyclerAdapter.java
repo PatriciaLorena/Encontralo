@@ -24,7 +24,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     private List<Article> originalItems;
     private RecyclerItemClick itemClick;
 
-    private String domain_image = "http://192.168.0.14:8000/imagenes/articulos/";
+    private String domain_image = "http://192.168.0.16:8000/imagenes/articulos/";
 
     public RecyclerAdapter(List<Article> items, RecyclerItemClick itemClick){
         this.items = items;
