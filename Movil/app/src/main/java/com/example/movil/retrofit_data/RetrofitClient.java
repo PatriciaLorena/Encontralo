@@ -1,4 +1,3 @@
-
 package com.example.movil.retrofit_data;
 
 import retrofit2.Retrofit;

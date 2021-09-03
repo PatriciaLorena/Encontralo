@@ -13,5 +13,4 @@ public interface RetrofitApiService {
     @GET("articulo")
     Call<List<Article>> getItemsDB();
 
-
 }
