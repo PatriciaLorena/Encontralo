@@ -17,7 +17,7 @@ public class Información extends AppCompatActivity {
     private TextView tvDescripcionDetail;
     private Article itemDetail;
 
-    private String domain_image = "http://192.168.0.16:8000/imagenes/articulos/";
+    private String domain_image = "http://192.168.0.3:8000/imagenes/articulos/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
