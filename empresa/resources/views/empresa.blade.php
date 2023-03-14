@@ -1,5 +1,3 @@
-@extends ('layouts.admin')
-@section ('contenido')
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
