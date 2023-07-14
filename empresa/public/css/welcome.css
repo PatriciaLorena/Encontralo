@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    background-color: #90e0ef;
+    color: #000;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.uno{
+    padding-top: 70px;
+    font-size: 50px;
+    
+}
+
+.container1{
+    position: absolute;
+    left: 1100px;
+}
+
+.nav-logo{
+    float: left;
+    width: 120px;
+}
+
+
+
+
+.nav-principal{
+    float: left;
+}
+        
+.nav-principal a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 22px 16px;
+            font-size: 25px;
+            font-weight: 900;
+            font-family: cursive;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+.img2{
+    width: 300px;
+    height: 200px;
+}
+
+.logo{
+    display: block;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+}
+
+.img-nav-logo{
+    margin: auto;
+    height: 70px;
+    width: 70px;
+}
+
+h2{
+    background-color: #0077b6;
+    text-align: center;
+}
+p{
+    
+    text-align: justify;
+}
+p, h2{
+    color: #03045e;
+    font-size: 25px;
+    padding: 5px;
+
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.link__caja{
+    background-color: darkred;
+    font-size: 10px;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+
+
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.title {
+    font-size: 100px;
+}
+
+.logo{
+
+}
+
+
+.nav-principal > a:hover, .vertical a:active {
+    background-color: #0077b6;
+}
+
+.nav-registro > a:hover, .vertical a:active {
+    background-color: #caf0f8;
+    color: black;
+}
+
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #03045e;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+.nav-registro1{
+
+}
+       .nav-registro {
+           display: flex;
+           float: left;
+           margin-left: auto;
+           transform: translate(150px, 0px);
+
+
+        }
+        
+        .nav-registro a {
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 30px;
+            font-weight: 900;
+            font-family: cursive;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 5px double blue;
+        }
+
+
+.m-b-md {
+    margin-bottom: 20px;
+    color: #03045e;
+    font-family: fantasy;
+    letter-spacing: .1rem;
+    text-align: center;
+
+}           
+
