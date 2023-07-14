@@ -172,5 +172,15 @@ p, h2{
     letter-spacing: .1rem;
     text-align: center;
 
-}           
+}   
+
+footer{
+    background-color: blue;
+    padding: 20px;
+    border: 20px;
+    color: white;
+    size: 15px;
+    text-align: center;
+    
+}
 

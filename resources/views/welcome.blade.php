@@ -138,7 +138,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
 </article>
     </body>
-          <footer class="main-footer">
+        <footer class="main-footer footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 1.0
         </div>
