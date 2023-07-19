@@ -38,7 +38,9 @@ initMap = function ()
               lat: position.coords.latitude
             };
             setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
-
+            //console.log(coords)
+            //carga las coordenadas en el input con id coords
+            document.getElementById("coords").value = coords.lat+","+ coords.lng;
 
           },function(error){console.log(error);});
 
@@ -50,6 +52,9 @@ function setMapa (coords)
 {
       //Se crea una nueva instancia del objeto mapa
       var map = new google.maps.Map(document.getElementById('map'),
+
+
+
       {
         zoom: 13,
         center:new google.maps.LatLng(coords.lat,coords.lng),
