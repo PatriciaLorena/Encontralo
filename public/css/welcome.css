@@ -1,35 +1,68 @@
 *{
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 0;  
 }
+
 
 html, body{
     background-color: #90e0ef;
     color: #000;
     font-family: 'Nunito', sans-serif;
-    font-weight: 200;
+    font-size: 20px;
     height: 100vh;
     margin: 0;
 }
 
+/*estilo para menu interactivo con scroll*/
+.nav-small{
+    font-weight: 100;
+    font-size: 10px;
+    transition: all 0.4s;
+
+    
+}
+
+.nav-big {
+
+            color: white;
+            font-size: 30px;
+            font-weight: 900;
+            font-family: cursive;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            padding: 20px;
+
+  }
+
+
 .uno{
-    padding-top: 70px;
+    padding-top: 5%;
+    padding-bottom: 3%;
     font-size: 50px;
     
 }
 
+.productos{
+    background-color: aliceblue;
+}
+
+.quienes{
+    background-color: aliceblue;
+}
+
 .container1{
-    position: absolute;
-    left: 1100px;
+    position: relative;
+    text-align: left;
+    left: 100px;
 }
 
 .nav-logo{
     float: left;
     width: 120px;
 }
-
-
-
 
 .nav-principal{
     float: left;
@@ -48,18 +81,6 @@ html, body{
             text-transform: uppercase;
         }
 
-.img2{
-    width: 300px;
-    height: 200px;
-}
-
-.logo{
-    display: block;
-    margin: auto;
-    height: 300px;
-    width: 300px;
-}
-
 .img-nav-logo{
     margin: auto;
     height: 70px;
@@ -67,18 +88,19 @@ html, body{
 }
 
 h2{
-    background-color: #0077b6;
+    
     text-align: center;
 }
-p{
-    
+p{ 
     text-align: justify;
 }
 p, h2{
     color: #03045e;
-    font-size: 25px;
-    padding: 5px;
+    font-size: 20px;
+}
 
+h1{
+    font-size: 22px;
 }
 
 .full-height {
@@ -115,13 +137,9 @@ p, h2{
     font-size: 100px;
 }
 
-.logo{
-
-}
-
 
 .nav-principal > a:hover, .vertical a:active {
-    background-color: #0077b6;
+    color: #0077b6;
 }
 
 .nav-registro > a:hover, .vertical a:active {
@@ -139,31 +157,62 @@ p, h2{
     top: 0px;
     width: 100%;
 }
-.nav-registro1{
 
+.nav-registro {
+    display: flex;
+    float: right;
+    text-align: right;
+}    
+
+.nav-registro a {
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    font-size: 22px;
+    font-weight: 900;
+    font-family: cursive;
+    letter-spacing: .0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 5px solid blue;
 }
-       .nav-registro {
-           display: flex;
-           float: left;
-           margin-left: auto;
-           transform: translate(150px, 0px);
+
+.img-empresa{
+    width: 400px;
+    height: 400px;
+    padding: 35px;
+    border-radius: 30% 15%;
+    background-position: center;
+    padding-top: 90px;
+}
+.empresa{
+    text-align: center;
+}
+
+.image-container {
+    text-align: center; /* Centra el contenido horizontalmente */
+    display: inline-block;
+    padding: 30px;
+    
+  }
+  
+  .image-container img {
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+  
+  .image-container h1 {
+    margin-top: 10px; /* Ajusta el margen superior entre la imagen y el texto */
+  }
 
 
-        }
-        
-        .nav-registro a {
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            font-size: 30px;
-            font-weight: 900;
-            font-family: cursive;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            border: 5px double blue;
-        }
 
+
+#logo{
+    display: block;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+}
 
 .m-b-md {
     margin-bottom: 20px;
@@ -174,12 +223,111 @@ p, h2{
 
 }   
 
+
+.cont{
+    margin: auto;
+    width: 100%;
+    padding: 15px;
+  }
+  
+#img2{
+    width: 50%;
+    height: 50%;
+    float: left;
+    padding-right: 15px;
+    
+  }
+
+
+
+
 footer{
-    background-color: blue;
+    background-color: black;
     padding: 20px;
     border: 20px;
     color: white;
-    size: 15px;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 0.2px;
     text-align: center;
     
+}
+
+/* estilos para el formulario de contacto */
+.form-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px auto;
+}
+
+.form__section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+form {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    order: 5;
+}
+
+.form__input {
+    width: 500px;
+    padding: 0;
+    margin: 6px 0;
+    border: none;
+    border-bottom: 3px solid #000;
+    display: block;
+}
+
+input:focus + label {
+    font-size: 10px;
+}
+
+span {
+    color: #f00;
+    font-size: 15px;
+}
+
+label {
+    font-size: 18px;
+    padding: 5px;
+    color: inherit; /* Agregamos esta línea para heredar el color del texto */
+}
+
+.form__input:focus {
+    outline: none;
+    border-bottom: 3px solid #000;
+}
+
+
+@media screen and (max-width:600px){
+    .form__input{
+        width: 300px;   
+    }
+    .boton2{
+        text-align: center;
+    }
+    
+}
+.boton2{
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    background-color: #03045e;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 3%;
+    font-weight: 700;
+   
+}
+
+.contacto{
+    background-color: #fff;
+    height: 100%;
 }

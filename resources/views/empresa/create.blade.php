@@ -11,7 +11,7 @@
 		</div>
 	@endif
 <div class="row">
-  <h1>Agregarrrrr Empresa</h1>
+  <h1>Agregar Empresa</h1>
     <form method="POST" action="{{route("empresa.store")}}">
       @csrf
 </div>
@@ -111,7 +111,7 @@
             placeholder="Ingrese su longitud">
           </div>
         </div>
-<label><h4><b>&nbsp;&nbsp;&nbsp;&nbsp;Mover el marcador para guardar la ubicación de su local</b></h4></label>
+<label><h4><b>&nbsp;&nbsp;&nbsp;&nbsp;En caso de que la ubicación de su local no coindida mueva el marcador</b></h4></label>
   <div class="col-md-12">
     <div class="" id="mapa" style="width: 90%; height:500px"></div>
   </div>
@@ -136,7 +136,7 @@ initMap = function ()
             };
             setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
             //console.log(coords)
-            //carga las coordenadas en el input con id coords
+            //carga las coordenadas en los input con id latidud y longitud
             document.getElementById("latitud").value = coords.lat;
             document.getElementById("longitud").value = coords.lng;
 
