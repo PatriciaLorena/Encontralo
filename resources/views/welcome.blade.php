@@ -7,54 +7,54 @@
         <title>Encontralo</title>
         <link rel="icon" href="{{asset('img/e.ico')}}">
 
-        <!-- Fonts -->
+        <!-- Fonts estilos de tipos de letras -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
 
         <!--estilos para normalizar css-->
         <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
         <!-- estilos personalizados para la pagina de bienvenida-->
         <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
 
+        <!-- estilos para el menu responsivo e interactivo con js-->
+        <link rel="stylesheet" href="{{asset('css/menu.css')}}">
+
         <!-- estilos animador para la pagina de bienvenida-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>  
+        <!-- estilos de iconos--> 
+        <script src="https://kit.fontawesome.com/8ec88bfdee.js" crossorigin="anonymous"></script> 
     </head>
 <body>
-<div class="flex-center full-height">
-            <div class="title m-b-md animate__animated animate__shakeY">
+<div class="encontralo flex-center full-height">
+            <div class="title animate__animated animate__shakeY">
                 <img id="logo" src="{{asset('img/e.png')}}"><b>Encontralo!!</b>
             </div>
             
 </div>
-<header class="header">
+<header id= "head" class="header">
 <nav class="nav-big" id="navbar">
     <div class="nav-logo">
-        <img class="img-nav-logo" src="{{asset('img/e.png')}}">
+        <img class="img-nav-logo" id="logoMenu" src="{{asset('img/e.png')}}">
     </div>
-    <div class="nav-principal">
+    <div id="nav-prin" class="nav-principal">
             <a href="#ancla-1">Quienes somos</a>
             <a href="#ancla-2">Empresas</a>
             <a href="#ancla-4">Contacto</a>
     </div>
-    <div class="nav-registro1">
+
+    <div  class="nav-registro1">
                 @if (Route::has('login'))
-                <div class="nav-registro1">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                    <div class="nav-registro">
+                    <div  id="logueo"class="nav-registro">
                         <a href="{{ route('login') }}">Ingresar</a>
-                    </div>
                     @if (Route::has('register'))
-                    <div class="nav-registro">
                         <a href="{{ route('register') }}">Registrarse</a>
                     @endif
                     </div>
                     @endauth
-                </div>
                 @endif
-    </div>
-                   
+    </div>                 
 </nav>
 </header>
 <article>

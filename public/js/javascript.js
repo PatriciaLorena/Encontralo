@@ -1,20 +1,46 @@
-  
-  window.addEventListener("DOMContentLoaded" , () => {
-    var element = document.getElementById("navbar");
-    document.addEventListener("scroll", () => {
-        if (window.scrollY > 0) {
-        element.classList.remove('nav-big')
-        element.classList.add('nav-small')
-        }else if (document.documentElement.scrollTop === 0){
-            element.classList.remove('nav-small');
-            element.classList.add('nav-big');
-            
-        }
-            
-    });  
+window.addEventListener("DOMContentLoaded" , () => {
+var element = document.getElementById("logoMenu");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 0) {
+    element.classList.remove('img-nav-logo')
+    element.classList.add('img-nav-logo1')
+  }else if (document.documentElement.scrollTop === 0){
+    element.classList.remove('img-nav-logo1')
+    element.classList.add('img-nav-logo')
+      
+  }
+}); 
 });
 
+window.addEventListener("DOMContentLoaded" , () => {
+  var element = document.getElementById("logueo");
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      element.classList.remove('nav-registro')
+      element.classList.add('nav-registro1')
+    }else if (document.documentElement.scrollTop === 0){
+      element.classList.remove('nav-registro1')
+      element.classList.add('nav-registro')
+        
+    }
+  }); 
+  });
 
+
+  window.addEventListener("DOMContentLoaded" , () => {
+    var element = document.getElementById("nav-prin");
+    document.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        element.classList.remove('nav-principal')
+        element.classList.add('nav-principal1')
+      }else if (document.documentElement.scrollTop === 0){
+        element.classList.remove('nav-principal1')
+        element.classList.add('nav-principal')
+          
+      }
+    }); 
+    });
+  
 
     function validarFormulario() {
         var input = document.getElementById("myInput");
@@ -97,13 +123,3 @@
         }
        
 });
-
-
- 
-
-
-
-
-
-
-
